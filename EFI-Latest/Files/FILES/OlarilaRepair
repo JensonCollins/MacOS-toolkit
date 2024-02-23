@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#set -x
+
+echo "<-- Olarila.com - The Real Vanilla Hackintosh -->"
+
+echo "     "
+sudo spctl --master-disable
+sudo spctl --global-disable
+sudo nvram -c
+sudo pmset autopoweroff 0
+sudo pmset powernap 0
+sudo pmset standby 0
+sudo pmset proximitywake 0
+sudo pmset tcpkeepalive 0
+sudo pmset -a hibernatemode 0
+sudo rm -f /private/var/vm/sleepimage
+sudo touch /private/var/vm/sleepimage
+sudo chflags uchg /private/var/vm/sleepimage
+ls -la /private/var/vm
+
+echo "DONE / ENJOY"
+
+osascript -e 'tell app "loginwindow" to «event aevtrrst»'

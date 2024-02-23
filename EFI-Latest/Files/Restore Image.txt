@@ -1,0 +1,15 @@
+Copy the .raw file to an USB Stick
+
+-Windows   
+https://sourceforge.net/projects/win32diskimager/
+
+-OS X
+diskutil list
+diskutil unmountDisk /dev/diskX  (replace X by the USB stick identifier)
+sudo dd if=[drag and drop the raw file in terminal] of=/dev/rdiskX bs=1m  (replace X by the USB stick identifier)
+
+or use Etcher.app (MacOS, Windows and Linux)
+https://etcher.io/
+
+If you have questions please use the forum   
+www.olarila.com

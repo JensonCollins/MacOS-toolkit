@@ -1,0 +1,16 @@
+#!/bin/sh
+
+outDir=/tmp/ACPI
+pledit=./PlistBuddy
+
+rm -rf $outDir
+mkdir $outDir
+
+echo "Extracting..."
+mkdir $outDir/ACPI
+./patchmatic -extract $outDir/ACPI
+
+echo "Creating Zip..."
+cd $outDir
+zip -r ~/Desktop/"ACPI $hostName.zip" * > /dev/null
+rm -rf $outDir
